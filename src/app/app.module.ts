@@ -32,14 +32,15 @@ const routes: Routes = [
     AboutComponent,
     ServicesComponent,
     ContactComponent,
-    HomeComponent,
+   
     SharedComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+    HomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
