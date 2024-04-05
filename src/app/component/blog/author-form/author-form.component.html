@@ -1,0 +1,54 @@
+
+    <form class="row g-3 needs-validation"  [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="col-md-4">
+        <label class="form-label">First name</label>
+        <input type="text" class="form-control" formControlName="firstName">
+        <div ngxErrors="firstName">
+          <div ngxError="required">First name is required</div>
+        </div>
+  
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Last name</label>
+        <input type="text" class="form-control"  formControlName="lastName">
+        <div ngxErrors="lastName">
+          <div ngxError="required">Last name is required</div>
+        </div>
+    
+      </div>
+    
+      <div class="col-md-4">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <div ngxErrors="email">
+          <div ngxError="required">Email is required</div>
+          <div ngxError="email">Please enter a valid email</div>
+        </div>
+    
+      </div>
+    
+      <div class="col-md-4">
+        <label class="form-label">Bio</label>
+        <input type="text" class="form-control" formControlName="bio" name="bio">
+        <div ngxErrors="bio">
+          <div ngxError="required">Bio is required</div>
+        </div>
+    
+      </div>
+
+          
+      <div class="col-md-4">
+        <label class="form-label">Profile picture url</label>
+        <input type="text" class="form-control" formControlName="profilePictureUrl" name="profilePictureUrl">
+        <div ngxErrors="profilePictureUrl">
+          <div ngxError="required">profile picture url is required</div>
+        </div>
+    
+      </div>
+    
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-primary" type="submit" >{{buttonText}}</button>
+        </div>
+      </div>
+    </form>
