@@ -25,4 +25,12 @@ export class BlogService {
     UpdateAuthor(id: string, Author: Author) : Observable<Author>{
         return this.http.put<Author>(`${this.baseUrl}api/author/UpdateAuthor/AuthorId=${id}`, Author)
     }
+
+    GetPagedAuthors(PageNumber: number, pageSize: number) : Observable<any> {
+        return this.http.get<any>(`${this.baseUrl}api/author/GetPagedAuthors?PageNumber=${PageNumber}&PageSize=${pageSize}`)
+    }
+
+    DeleteAuthor(id: string) : Observable<void> {
+        return this.http.delete<void>(`${this.baseUrl}api/author/DeleteAuthor?id=${id}`);
+    }
 }

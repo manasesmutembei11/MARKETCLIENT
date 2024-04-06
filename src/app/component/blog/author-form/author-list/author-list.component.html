@@ -1,0 +1,65 @@
+
+<hr>
+<div>
+  <button class="btn btn-primary" routerLink="/person">
+    <span class="bi bi-person-fill-add"></span> New</button>
+</div>
+<HR>
+<div
+  class="table-responsive"
+>
+  <table
+    class="table table-primary"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" *ngFor="let author of authors">
+        <td>{{author.id}}</td>
+        <td scope="row"> {{author.firstName}}</td>
+        
+        <td>{{author.lastName}}</td>
+        <td>{{ author.email}}</td>
+        <td>{{ author.bio}}</td>
+        <td>{{ author.profilePictureUrl}}</td>
+        <td>
+<div class="dropdown open">
+  <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="triggerId"
+    data-bs-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    Actions
+  </button>
+  <div class="dropdown-menu" aria-labelledby="triggerId">
+    <button class="dropdown-item" [routerLink]="['/details', person.id]">
+      <span class="bi bi-info-circle me-1"></span> Details</button>
+    <button class="dropdown-item" [routerLink]="['/edit', person.id]">
+      <span class="bi bi-pencil-square me-1"></span> Edit</button>
+    <button class="dropdown-item" (click)="deletePerson(person.id)">
+      <span class="bi bi-trash me-1"></span> Delete</button>
+  </div>
+</div>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<ngb-pagination [(page)]="page"
+                [pageSize]="pageSize"
+                [collectionSize]="totalCount"
+                (pageChange)="onPageChange($event)">
+</ngb-pagination>

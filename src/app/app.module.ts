@@ -14,6 +14,7 @@ import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { SharedComponent } from './component/shared/shared.component';
 import { AuthorFormComponent } from './component/blog/author-form/author-form.component';
+import { AuthorListComponent } from './component/blog/author-form/author-list/author-list.component';
 
 const routes: Routes = [
   {path: 'about', component: AboutComponent},
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path: 'blog', component: BlogComponent},
   {path: 'author', component: AuthorFormComponent },
   {path: 'contact', component: ContactComponent},
-  {path: 'author', component: AuthorFormComponent}
+  {path: 'authorlist', component: AuthorListComponent}
 
 ];
 
@@ -35,6 +36,7 @@ const routes: Routes = [
     ContactComponent,
     AuthorFormComponent,
     SharedComponent,
+    AuthorListComponent,
   ],
   imports: [
     BrowserModule,
