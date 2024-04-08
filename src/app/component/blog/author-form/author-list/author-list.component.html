@@ -1,7 +1,7 @@
 
 <hr>
 <div>
-  <button class="btn btn-primary" routerLink="/person">
+  <button class="btn btn-primary" routerLink="/author">
     <span class="bi bi-person-fill-add"></span> New</button>
 </div>
 <HR>
@@ -23,7 +23,7 @@
     </thead>
     <tbody>
       <tr class="" *ngFor="let author of authors">
-        <td>{{author.id}}</td>
+        <td>{{author.authorId}}</td>
         <td scope="row"> {{author.firstName}}</td>
         
         <td>{{author.lastName}}</td>
