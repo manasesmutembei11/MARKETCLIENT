@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes } from '@angular/router';
+import { RouterModule,Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlogComponent } from './component/blog/blog.component';
 import { ProductsComponent } from './component/products/products.component';
@@ -17,6 +17,7 @@ import { AuthorFormComponent } from './component/blog/author-form/author-form.co
 import { AuthorListComponent } from './component/blog/author-form/author-list/author-list.component';
 
 const routes: Routes = [
+  {path: '', component: SharedComponent, pathMatch: 'full'},
   {path: 'about', component: AboutComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'blog', component: BlogComponent},
@@ -44,7 +45,9 @@ const routes: Routes = [
     NgbModule,
     NgbAccordionModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbPaginationModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
