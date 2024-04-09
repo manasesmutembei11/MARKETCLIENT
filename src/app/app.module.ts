@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule,Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxErrorsModule } from '@ngspot/ngx-errors';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     NgbPaginationModule,
+    NgxErrorsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
